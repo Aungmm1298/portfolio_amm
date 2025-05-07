@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      /* Custom CSS for certificate display */
+      #certificate {
+          padding: 50px 0;
+          background-color: #1f1f1f;
+      }
+      .card {
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+      .card-title {
+          font-weight: bold;
+      }
+      .card-text {
+          font-size: 0.9rem;
+      }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#certificate">Certificate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Home -->
+     <section id="home">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-info">
+                    <h4>Hello</h4>
+                    <p class="mt-2 myinfo">Hello! I'm Aung Myint Myat.
+
+                      As an engineering student at Mae Fah Luang University, I specialize in Digital and Communication Engineering with a focus on cybersecurity, networking, AR, IoT, and blockchain technology. My journey in tech is fueled by a passion for developing innovative, user-centered solutions that bridge creativity and technical expertise. From building VR-integrated smart home systems to exploring blockchain with Solidity, I’m driven by curiosity and a commitment to solving complex problems through digital solutions.
+
+                      Thank you for stopping by, and I look forward to connecting on future projects!                      
+                    </p>
+                    <button>
+                    <span><a href="" class="text-dark cv-link">Download CV</a></span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 74 74"
+                        height="34"
+                        width="34"
+                    >
+                        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                        <path
+                        fill="black"
+                        d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
+                        ></path>
+                    </svg>
+                    </button>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+              <img src="image/IMG_5487.jpg" alt="Aung" class="portfolio-image"> <!-- Added class for animation -->
+          </div>
+        </div>
+     </section>
+     <!-- Education -->
+      <section id="education">
+        <h2 class="title">Education</h2>
+        <div class="container mt-5">
+            <style>@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');</style>
+            <!--This is the main container that contains the whole timeline.-->
+            <section class="design-section">
+            <div class="timeline">
+            
+                      <!--Well, The reason for this div is to fill space. 
+            This space is technically used for keeping dates, 
+            but I didn't find the need for dates. However, I'll provide 
+            you the styling for dates, so that you can use it if you 
+            wanted to.-->
+                              <div class="timeline-empty">
+                              </div>
+            
+            <!--This is the class where the timeline graphics are 
+            housed in. Note that we have timeline-circle 
+            here for that pointer in timeline.-->
+            
+                           <div class="timeline-middle">
+                               <div class="timeline-circle"></div>
+                           </div>
+                           <div class="timeline-component timeline-content">
+                            <h3>No.(2), BEHS, Chauk</h3>
+                            <p>2008 - 2013</p>
+                       </div>
+                            <div class="timeline-component timeline-content">
+                                     <h3>Technological University, Taunggyi</h3>
+                                     <p>2014 - 2020</p>
+                            </div>
+                            <div class="timeline-middle">
+                                <div class="timeline-circle"></div>
+                            </div>
+                            <div class="timeline-empty">
+                            </div>
+            
+                            <div class="timeline-empty">
+                            </div>
+            
+                           <div class="timeline-middle">
+                               <div class="timeline-circle"></div>
+                           </div>
+                           <div class=" timeline-component timeline-content">
+                            <h3>Mae Fah Luang University</h3>
+                            <p>Present</p>
+                       </div>
+            
+                   </div>
+                </div> 
+      </section>
+      <!-- Certificate -->
+      <!-- Certificate Section -->
+<section id="certificate">
+  <h2 class="title">Certificate</h2>
+  <div class="container">
+    <div class="row g-4">
+      <!-- Huawei Certificate -->
+      <div class="col-md-4">
+        <div class="certificate-card">
+          <div class="certificate-img">
+            <img src="image/HWDCTEDA233144.png" alt="Huawei Cloud Certificate">
+          </div>
+          <div class="certificate-content">
+            <h5>Huawei Cloud Developer Certification</h5>
+            <p>HCIA Cloud Service Developer certification demonstrating expertise in cloud computing.</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/HWDCTEDA233144.png?alt=media&token=3253e732-1701-4f50-98ec-f860899e65f8" target="_blank" class="view-btn">View Certificate</a>
+          </div>
+        </div>
+      </div>
+      <!-- Google Certificate -->
+      <div class="col-md-4">
+        <div class="certificate-card">
+          <div class="certificate-img">
+            <img src="image/Foundation of Cybersecurity_page-0001.jpg" alt="Google Cybersecurity Certificate">
+          </div>
+          <div class="certificate-content">
+            <h5>Google Cybersecurity Foundations</h5>
+            <p>Comprehensive training in cybersecurity fundamentals from Google.</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/Foundation%20of%20Cybersecurity_page-0001.jpg?alt=media&token=b22e051d-85fb-475c-8dcd-2f7d93eae363" target="_blank" class="view-btn">View Certificate</a>
+          </div>
+        </div>
+      </div>
+      <!-- Cybrary Certificate -->
+      <div class="col-md-4">
+        <div class="certificate-card">
+          <div class="certificate-img">
+            <img src="image/cybrary-cert-careers-in-cybersecurity.jpg" alt="Cybrary Certificate">
+          </div>
+          <div class="certificate-content">
+            <h5>Cybrary - Careers in Cybersecurity</h5>
+            <p>Professional certification in cybersecurity career paths.</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/cybrary-cert-careers-in-cybersecurity.jpg?alt=media&token=e0a87d5c-697e-4aae-bdf6-9d6fe423eff7" target="_blank" class="view-btn">View Certificate</a>
+          </div>
+        </div>
+      </div>
+      <!-- Agoda Certificate -->
+      <div class="col-md-4">
+        <div class="certificate-card">
+          <div class="certificate-img">
+            <img src="image/Agoda Tech Camp2024.jpg" alt="Agoda Tech Camp Certificate">
+          </div>
+          <div class="certificate-content">
+            <h5>Agoda Tech Camp 2024</h5>
+            <p>Participation in Agoda's technology and development training program.</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/Agoda%20Tech%20Camp2024.jpg?alt=media&token=f1eadd00-ae70-4420-9bce-465001767e11" target="_blank" class="view-btn">View Certificate</a>
+          </div>
+        </div>
+      </div>
+      <!-- Professional Development Certificate -->
+      <div class="col-md-4">
+        <div class="certificate-card">
+          <div class="certificate-img">
+            <img src="image/6631502055.jpg" alt="Professional Development Certificate">
+          </div>
+          <div class="certificate-content">
+            <h5>Professional Development Certificate</h5>
+            <p>Recognition of advanced professional development and expertise.</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/6631502055.jpg?alt=media&token=c99758c9-fb4f-4065-b50e-7d769f5adb30" target="_blank" class="view-btn">View Certificate</a>
+          </div>
+        </div>
+      </div>
+      <!-- JIWC Certificate -->
+      <div class="col-md-4">
+        <div class="certificate-card">
+          <div class="certificate-img">
+            <img src="image/10_04_Aung Myint Myat_JIWC 2024 Certificate of participation_page-0001.jpg" alt="JIWC 2024 Certificate">
+          </div>
+          <div class="certificate-content">
+            <h5>JIWC 2024 Participation Certificate</h5>
+            <p>Recognition of participation in Japan International Work Camp 2024.</p>
+            <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/10_04_Aung%20Myint%20Myat_JIWC%202024%20Certificate%20of%20participation_page-0001.jpg?alt=media&token=d880336b-ce15-47f3-acbd-f55151435a68" target="_blank" class="view-btn">View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+       <!-- About -->
+        <section id="about">
+            <h2 class="title">About</h2>
+            <div class="container">
+                <p>
+                  I'm Aung Myint Myat, a Digital and Communication Engineering student at Mae Fah Luang University with expertise in cybersecurity, networking, AR, IoT, blockchain, and cloud computing. Passionate about creating impactful digital solutions, I specialize in VR, IoT automation, and blockchain applications. My goal: to bridge technology and user needs through innovative, user-centered projects.
+                </p>
+                <p>
+
+                </p>
+                <p>
+
+                </p>
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="image/13899905_5392786.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h1 class="card-title text-center">Experience</h1>
+                              <p class="card-text text-center">4 Years</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="image/21779356_6524442.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h1 class="card-title text-center">Language</h1>
+                              <p class="card-text text-center">EN - MM - JP</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="image/6974855_4380.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h1 class="card-title text-center">projects</h1>
+                              <p class="card-text text-center">5+</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+<section id="contact" data-aos="fade-up">
+  <div class="container mt-5">
+    <h2 class="title text-start" style="color: white;">Contact</h2>
+    <div class="contact-details text-start">
+      <p>
+        <i class="fas fa-envelope"></i> 
+        Email: <a href="aungmyintmyatchauk@gmail.com" class="contact-link">aungmyintmyatchauk@gmail.com</a>
+      </p>
+      <p>
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+        LinkedIn: 
+        <a href="https://www.linkedin.com/in/aung-myint-myat-305316189/" class="contact-link" target="_blank" rel="noopener noreferrer">
+          Aung Myint Myat
+        </a>
+      </p>      
+      <p>
+        <i class="fab fa-line"></i> 
+        LINE: <a href="https://line.me/ti/p/aungdoublem" class="contact-link" target="_blank">aungdoublem</a>
+      </p>
+      <hr class="divider">
+      <p>I look forward to hearing from you!</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>

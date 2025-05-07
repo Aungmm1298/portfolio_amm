@@ -1,0 +1,315 @@
+@font-face {
+  font-family: SSMedium;
+  src: url(../fonts/SofiaSans-Medium.ttf);
+}
+
+:root {
+  --primary-color: #1e201e;
+  --secondary-color: #3c3d37;
+  --third-color: #697565;
+  --fourth-color: #ecdfcc;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: SSMedium;
+  background: var(--primary-color);
+}
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--fourth-color);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--secondary-color) !important;
+}
+.navbar .nav-link {
+  color: var(--fourth-color);
+  margin-left: 80px;
+}
+.navbar .active {
+  color: var(--third-color) !important;
+}
+/* Home */
+#home {
+  padding: 0 80px;
+  height: 80vh;
+}
+#home img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--fourth-color);
+}
+#home .col-md-6 {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  height: 90vh;
+}
+#home .cv-link {
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: var(--fourth-color);
+  transition: all ease-in-out 0.3s;
+}
+
+#home .myinfo {
+  text-align: justify;
+  padding-right: 50px;
+}
+
+/* From Uiverse.io by alexmaracinaru */
+#home button {
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #cfef00;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+#home button:hover {
+  background: #c4e201;
+}
+
+#home button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#home button:hover svg {
+  transform: translateX(5px);
+}
+
+#home button:active {
+  transform: scale(0.95);
+}
+
+/* Education */
+#education {
+  padding: 30px 80px;
+  height: 100vh;
+}
+#education .col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fourth-color);
+}
+
+#education .design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1f1f1f;
+  min-height: 100vh;
+  padding: 100px 0;
+  font-family: Jost;
+}
+
+#education .design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#education .timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#education .timeline-content {
+  padding: 20px;
+  background: #1f1f1f;
+  -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+  border-radius: 5px;
+  color: white;
+  padding: 1.75rem;
+  transition: 0.4s ease;
+  overflow-wrap: break-word !important;
+  margin: 1rem;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+#education .timeline-component {
+  margin: 0px 20px 20px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #education .timeline {
+    display: grid;
+    grid-template-columns: 1fr 3px 1fr;
+  }
+  #education .timeline-middle {
+    position: relative;
+    background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+    width: 3px;
+    height: 100%;
+  }
+  #education .main-middle {
+    opacity: 0;
+  }
+  #education .timeline-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #f27121, #e94057, #8a2387);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  /* Hover effect for timeline content */
+  #education .timeline-content:hover {
+    transform: translateY(-10px); /* Moves the element upward */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Enhances shadow for floating effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+  }
+}
+/* certificate */
+/* certificate section */
+#certificate {
+  padding: 80px 0;
+  background-color: var(--primary-color);
+}
+
+.certificate-card {
+  background: var(--secondary-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.certificate-card:hover .certificate-img img {
+  transform: scale(1.1);
+}
+
+.certificate-content {
+  padding: 20px;
+}
+
+.certificate-content h5 {
+  color: var(--fourth-color);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.certificate-content p {
+  color: var(--third-color);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.view-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--fourth-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: var(--third-color);
+  color: var(--fourth-color);
+  transform: translateX(5px);
+}
+#about {
+  padding: 60px 80px;
+}
+#about .col-md-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about p {
+  color: var(--third-color);
+}
+#contact {
+  background-color: #343a40; /* Dark background for contrast */
+  padding: 40px 0; /* Padding for top and bottom */
+}
+
+#contact h2 {
+  text-align: center; /* Center the title */
+  color: white; /* White color for the title */
+}
+
+#contact h5 {
+  color: white; /* White color for the headings */
+}
+
+#contact p {
+  color: white; /* White color for the paragraph text */
+}
+
+#contact a {
+  color: white; /* White color for the links */
+  text-decoration: none; /* Remove underline */
+}
+
+#contact a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+/* Basic styles for the portfolio image */
+.portfolio-image {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  animation: pulse 2s infinite; /* Continuous animation */
+}
+
+/* Keyframes for continuous pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Original size */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  }
+  50% {
+    transform: scale(1.05); /* Scale up */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow */
+  }
+  100% {
+    transform: scale(1); /* Return to original size */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Return to initial shadow */
+  }
+}
