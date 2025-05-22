@@ -355,7 +355,7 @@ body {
     border: 3px solid var(--third-color) !important;
     margin: 20px auto 14px auto !important;
     display: block !important;
-    animation: none !important;
+    background: transparent !important; /* Remove any background color */
   }
   #home .text-info {
     text-align: center !important;
