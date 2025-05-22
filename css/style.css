@@ -248,6 +248,7 @@ body {
   text-shadow: 0 0 12px var(--accent-color), 0 0 24px var(--third-color);
   position: relative;
 }
+
 /* Home */
 #home {
   padding: 0 80px;
@@ -311,9 +312,9 @@ body {
 }
 
 #home button > svg {
-  width: 34px;
-  margin-left: 10px;
-  transition: transform 0.3s ease-in-out;
+  width: 26px !important;
+  height: 26px !important;
+  margin-left: 6px !important;
 }
 
 #home button:hover svg {
@@ -322,6 +323,76 @@ body {
 
 #home button:active {
   transform: scale(0.95);
+}
+@media (max-width: 991px) {
+  #home {
+    padding: 0 8px !important;
+    height: auto !important;
+  }
+  #home .row {
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+  #home .col-md-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+  .portfolio-image,
+  #home img {
+    width: 130px !important;
+    height: 130px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    box-shadow: 0 0 14px var(--third-color), 0 0 28px var(--accent-color) !important;
+    border: 3px solid var(--third-color) !important;
+    margin: 20px auto 14px auto !important;
+    display: block !important;
+    animation: none !important;
+  }
+  #home .text-info {
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 0 auto 12px auto !important;
+    padding: 0 4px !important;
+  }
+  #home .myinfo {
+    font-size: 0.98rem !important;
+    color: #fff !important;
+    text-shadow: 0 0 8px var(--third-color), 0 0 16px var(--accent-color) !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+    padding: 0 2px !important;
+  }
+  #home button,
+  #home .cv-link {
+    font-size: 0.95rem !important;
+    padding: 7px 0 !important;
+    width: 80% !important;
+    max-width: 220px !important;
+    margin: 0 auto 10px auto !important;
+    border-radius: 40px !important;
+  }
+  #home button span a.cv-link {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+  }
+  #home h4 {
+    margin-top: 10px !important;
+    margin-bottom: 8px !important;
+    color: var(--third-color) !important;
+    text-shadow: 0 0 8px var(--third-color), 0 0 16px var(--accent-color) !important;
+    font-size: 1.1rem !important;
+  }
 }
 
 /* Education */
@@ -413,6 +484,66 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
   }
 }
+@media (max-width: 991px) {
+  #education {
+    padding: 18px 6px !important;
+    height: auto !important;
+  }
+  #education .timeline {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+  #education .timeline-content {
+    padding: 10px 6px !important;
+    font-size: 0.95rem !important;
+    margin: 0.5rem 0 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(0, 255, 247, 0.08),
+      0 1.5px 6px var(--accent-color) !important;
+    background: rgba(35, 41, 70, 0.96) !important;
+  }
+  #education .timeline-middle {
+    width: 2px !important;
+    height: 28px !important;
+    margin: 12px auto !important;
+    background-image: linear-gradient(
+      45deg,
+      #f27121,
+      #e94057,
+      #8a2387
+    ) !important;
+    border-radius: 2px !important;
+    position: static !important;
+  }
+  #education .timeline-component {
+    margin: 0 0 12px 0 !important;
+  }
+  #education .timeline-circle {
+    width: 10px !important;
+    height: 10px !important;
+    top: -5px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+@media (max-width: 575px) {
+  #education .timeline-content {
+    padding: 7px 3px !important;
+    font-size: 0.92rem !important;
+  }
+  #education .timeline-middle {
+    display: none !important;
+  }
+  #education .timeline-circle {
+    display: none !important;
+  }
+}
+
 /* certificate */
 /* certificate section */
 .certificate-horizontal {
@@ -444,11 +575,19 @@ body {
 }
 
 .certificate-card {
+  width: 320px;
+  height: 370px;
+  max-width: 100%;
+  margin: 18px auto;
   background: var(--secondary-color);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 14px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
 }
 
 .certificate-card:hover {
@@ -463,9 +602,11 @@ body {
 
 .certificate-img img {
   width: 100%;
-  height: 250px;
+  max-width: 300px;
+  height: 180px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
 .certificate-card:hover .certificate-img img {
@@ -473,7 +614,7 @@ body {
 }
 
 .certificate-content {
-  padding: 20px;
+  padding: 12px 0 0 0;
 }
 
 .certificate-content h5 {
