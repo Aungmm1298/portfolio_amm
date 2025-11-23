@@ -4,424 +4,1952 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/modern-cards.css" />
+    
+    <!-- Framework & Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@0.5.10/dist/typography.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        accent: '#00FFF7',
+                        highlight: '#FF00EA',
+                    },
+                    animation: {
+                        'gradient': 'gradient 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 15s linear infinite',
+                        'spin-reverse-slow': 'spin-reverse 20s linear infinite',
+                        'shine': 'shine 2s forwards',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-position': '0% 50%'
+                            },
+                            '50%': {
+                                'background-position': '100% 50%'
+                            },
+                        },
+                        float: {
+                            '0%, 100%': { 
+                                transform: 'translateY(0) rotate(0deg)',
+                                opacity: 1
+                            },
+                            '50%': { 
+                                transform: 'translateY(-20px) rotate(180deg)',
+                                opacity: 0.7
+                            }
+                        },
+                        'pulse-slow': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 }
+                        },
+                        spin: {
+                            'to': { transform: 'rotate(360deg)' }
+                        },
+                        'spin-reverse': {
+                            'to': { transform: 'rotate(-360deg)' }
+                        },
+                        shine: {
+                            'from': { transform: 'translateX(-100%) rotate(45deg)' },
+                            'to': { transform: 'translateX(100%) rotate(45deg)' }
+                        }
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Icons & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-      /* Custom CSS for certificate display */
-      #certificate {
-          padding: 50px 0;
-          background-color: #1f1f1f;
-      }
-      .card {
-          transition: transform 0.3s, box-shadow 0.3s;
-      }
-      .card:hover {
-          transform: scale(1.05);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      }
-      .card-title {
-          font-weight: bold;
-      }
-      .card-text {
-          font-size: 0.9rem;
-      }
-  </style>
+    
+    <!-- Interactive Elements -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Modern Design System -->
+    <link rel="stylesheet" href="css/modern-styles.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <meta name="theme-color" content="#0ea5e9">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="image/IMG_5239.JPG" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Modern CSS is already included via modern-styles.css and modern-cards.css -->
 </head>
 <body>
-  <!-- Animated colorful blobs background -->
-<div class="blobs-bg">
-  <div class="blob"></div>
-  <div class="blob"></div>
-  <div class="blob"></div>
-  <div class="blob"></div>
-  <div class="blob"></div>
-</div>
-  
-    <!-- Navbar -->
+  <!-- Particle.js Background -->
+<div id="particles-js" class="fixed inset-0 z-0"></div>
 
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#education">Education</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#skills">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#certificate">Certificate</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-              
-            </ul>
-          </div>
+<!-- Unique Sidebar Navbar -->
+<header class="fixed left-4 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
+    <nav class="relative">
+        <!-- Vertical Navigation -->
+        <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-3 shadow-2xl">
+            <div class="flex flex-col items-center gap-3">
+                <!-- Nav Items -->
+                <a href="#home" class="group relative w-12 h-12 flex items-center justify-center rounded-2xl hover:bg-white/10 transition-all duration-300" title="Home">
+                    <i class="fas fa-home text-white/60 group-hover:text-white text-lg"></i>
+                    <div class="absolute left-full ml-4 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
+                        <span class="text-white text-sm font-medium">Home</span>
+                    </div>
+                </a>
+                
+                <a href="#education" class="group relative w-12 h-12 flex items-center justify-center rounded-2xl hover:bg-white/10 transition-all duration-300" title="Education">
+                    <i class="fas fa-graduation-cap text-white/60 group-hover:text-white text-lg"></i>
+                    <div class="absolute left-full ml-4 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
+                        <span class="text-white text-sm font-medium">Education</span>
+                    </div>
+                </a>
+                
+                <a href="#skills" class="group relative w-12 h-12 flex items-center justify-center rounded-2xl hover:bg-white/10 transition-all duration-300" title="Skills">
+                    <i class="fas fa-code text-white/60 group-hover:text-white text-lg"></i>
+                    <div class="absolute left-full ml-4 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
+                        <span class="text-white text-sm font-medium">Skills</span>
+                    </div>
+                </a>
+                
+                <a href="#certificate" class="group relative w-12 h-12 flex items-center justify-center rounded-2xl hover:bg-white/10 transition-all duration-300" title="Certificate">
+                    <i class="fas fa-certificate text-white/60 group-hover:text-white text-lg"></i>
+                    <div class="absolute left-full ml-4 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
+                        <span class="text-white text-sm font-medium">Certificate</span>
+                    </div>
+                </a>
+                
+                <a href="#project" class="group relative w-12 h-12 flex items-center justify-center rounded-2xl hover:bg-white/10 transition-all duration-300" title="Projects">
+                    <i class="fas fa-folder-open text-white/60 group-hover:text-white text-lg"></i>
+                    <div class="absolute left-full ml-4 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
+                        <span class="text-white text-sm font-medium">Projects</span>
+                    </div>
+                </a>
+                
+                <a href="#about" class="group relative w-12 h-12 flex items-center justify-center rounded-2xl hover:bg-white/10 transition-all duration-300" title="About">
+                    <i class="fas fa-user text-white/60 group-hover:text-white text-lg"></i>
+                    <div class="absolute left-full ml-4 px-4 py-2 bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
+                        <span class="text-white text-sm font-medium">About</span>
+                    </div>
+                </a>
+                
+                <!-- Divider -->
+                <div class="w-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                
+                <!-- Contact Button -->
+                <a href="#contact" class="group relative w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-accent/20 to-highlight/20 hover:from-accent/30 hover:to-highlight/30 border border-accent/30 transition-all duration-300" title="Contact">
+                    <i class="fas fa-envelope text-accent group-hover:text-white text-lg"></i>
+                    <div class="absolute left-full ml-4 px-4 py-2 bg-gradient-to-r from-accent/20 to-highlight/20 backdrop-blur-xl border border-accent/30 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap">
+                        <span class="text-white text-sm font-medium">Contact</span>
+                    </div>
+                </a>
+            </div>
         </div>
-      </nav>
-    </header>
+    </nav>
+</header>
+
+<!-- Top Mobile Navbar -->
+<header class="fixed top-0 left-0 right-0 z-50 lg:hidden">
+    <nav class="px-6 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Menu Button -->
+            <button class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 hover:bg-white/10 transition-all duration-300" id="mobile-menu-button">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Contact Icon -->
+            <a href="#contact" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-gradient-to-br from-accent/20 to-highlight/20 border border-accent/30">
+                <i class="fas fa-envelope text-accent text-lg"></i>
+            </a>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="hidden mt-4" id="mobile-menu">
+            <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-4 shadow-2xl">
+                <div class="space-y-2">
+                    <a href="#home" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-home text-white/60 text-lg w-6"></i>
+                        <span class="text-white/80 font-medium">Home</span>
+                    </a>
+                    <a href="#education" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-graduation-cap text-white/60 text-lg w-6"></i>
+                        <span class="text-white/80 font-medium">Education</span>
+                    </a>
+                    <a href="#skills" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-code text-white/60 text-lg w-6"></i>
+                        <span class="text-white/80 font-medium">Skills</span>
+                    </a>
+                    <a href="#certificate" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-certificate text-white/60 text-lg w-6"></i>
+                        <span class="text-white/80 font-medium">Certificate</span>
+                    </a>
+                    <a href="#project" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-folder-open text-white/60 text-lg w-6"></i>
+                        <span class="text-white/80 font-medium">Projects</span>
+                    </a>
+                    <a href="#about" class="flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-user text-white/60 text-lg w-6"></i>
+                        <span class="text-white/80 font-medium">About</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
     <!-- Home -->
-     <section id="home">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="text-info">
-                    <h4>Hello</h4>
-                    <p class="mt-2 myinfo">Hello! I'm Aung Myint Myat.
+    <section id="home" class="min-h-screen relative overflow-hidden flex items-center">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <!-- Dynamic gradient orbs -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/30 rounded-full filter blur-[120px] animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-highlight/30 rounded-full filter blur-[120px] animate-float delay-1000"></div>
+            <!-- Animated grid -->
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black_70%)] transform rotate-45"></div>
+        </div>
+        
+        <!-- Content Container -->
+        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+                <!-- Text Content -->
+                <div class="w-full md:w-1/2 space-y-8">
+                    <!-- Name and Role -->
+                    <div class="relative">
+                        <div class="absolute -left-4 top-0 w-1 h-32 bg-gradient-to-b from-accent to-highlight animate-pulse"></div>
+                        <div class="space-y-4">
+                            <h1 class="text-6xl md:text-7xl font-bold leading-tight">
+                                <span class="text-white/90">Hello, I'm</span>
+                                <div class="relative inline-block mt-2">
+                                    <span class="relative z-10 bg-gradient-to-r from-accent via-white to-highlight bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                                        Aung Myint Myat
+                                    </span>
+                                    <div class="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-accent to-highlight opacity-30 blur-xl"></div>
+                                </div>
+                            </h1>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <span class="inline-block w-12 h-[2px] bg-accent"></span>
+                                <p class="text-xl tracking-wider">Junior Cloud Engineer & Junior Game Developer</p>
+                            </div>
+                        </div>
+                    </div>
 
-                      As an engineering student at Mae Fah Luang University, I specialize in Digital and Communication Engineering with a focus on cybersecurity, networking, AR, IoT, and blockchain technology. My journey in tech is fueled by a passion for developing innovative, user-centered solutions that bridge creativity and technical expertise. From building VR-integrated smart home systems to exploring blockchain with Solidity, I’m driven by curiosity and a commitment to solving complex problems through digital solutions.
+                    <!-- Bio Card -->
+                    <div class="relative mt-8">
+                        <div class="backdrop-blur-md bg-white/5 border border-white/10 p-6 rounded-2xl shadow-2xl">
+                            <p class="text-lg text-gray-300 leading-relaxed">
+                                I'm a student passionate about game development and cloud engineering. I enjoy building interactive 3D environments, experimenting with AR/VR, and exploring cloud technologies to design scalable, efficient systems.
+                            </p>
+                        </div>
+                    </div>
 
-                      Thank you for stopping by, and I look forward to connecting on future projects!                      
-                    </p>
-                    <button>
-                    <span><a href="CV/Aung Myint Myat (Junior Front End Developer).pdf">Download CV</a></span>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 74 74"
-                        height="34"
-                        width="34"
-                    >
-                        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
-                        <path
-                        fill="black"
-                        d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z"
-                        ></path>
-                    </svg>
+                    <!-- CTA Button -->
+                    <div class="mt-12 flex items-center gap-6">
+                        <div class="relative group inline-block">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-accent to-highlight rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-200"></div>
+                            <a href="CV/Aung Myint Myat (Junior Front End Developer).pdf" 
+                               class="relative flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-lg group-hover:bg-black transition duration-200">
+                                <span class="font-medium">Download CV</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image Section -->
+                <div class="w-full md:w-1/2">
+                    <div class="relative max-w-md mx-auto">
+                        <!-- Background Effects -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-accent/30 to-highlight/30 blur-[120px] animate-pulse"></div>
+                        
+                        <!-- Main Image Container -->
+                        <div class="relative group">
+                            <!-- Rotating Frames -->
+                            <div class="absolute -inset-4 bg-[conic-gradient(from_0deg,transparent_0_deg,var(--tw-gradient-from)_90deg,transparent_180deg,var(--tw-gradient-to)_270deg,transparent_360deg)] from-accent to-highlight rounded-full animate-spin-slow opacity-75"></div>
+                            <div class="absolute -inset-4 bg-[conic-gradient(from_180deg,transparent_0_deg,var(--tw-gradient-to)_90deg,transparent_180deg,var(--tw-gradient-from)_270deg,transparent_360deg)] from-accent to-highlight rounded-full animate-spin-reverse-slow opacity-75"></div>
+                            
+                            <!-- Image Frame -->
+                            <div class="relative group">
+                                <!-- Animated Gradient Border -->
+                                <div class="absolute -inset-1 bg-gradient-to-r from-accent via-white to-highlight rounded-full opacity-75 group-hover:opacity-100 blur-sm group-hover:blur transition-all duration-500"></div>
+                                <div class="aspect-square rounded-full p-2 bg-gradient-to-br from-accent to-highlight group-hover:p-1 transition-all duration-500 relative">
+                                    <!-- Inner Container with Image -->
+                                    <div class="relative w-full h-full rounded-full overflow-hidden bg-gray-900 p-1">
+                                        <img 
+                                            src="image/IMG_5239.JPG " 
+                                            alt="Profile Photo" 
+                                            class="w-full h-full object-cover rounded-full transform group-hover:scale-110 transition-all duration-700 ease-out"
+                                        >
+                                        <!-- Hover Effects -->
+                                        <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                            <!-- Shine Effect -->
+                                            <div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/30 to-white/0 opacity-0 group-hover:opacity-100 group-hover:translate-x-full transition-all duration-1000 ease-in-out"></div>
+                                            <!-- Color Overlay -->
+                                            <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-highlight/10 mix-blend-overlay"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Elements -->
+                            <div class="absolute -inset-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                                <div class="w-full h-full border-2 border-accent/20 rounded-full animate-spin-reverse-slow group-hover:border-accent/40"></div>
+                            </div>
+                            <div class="absolute -inset-8 flex items-center justify-center group-hover:scale-110 transition-transform duration-700">
+                                <div class="w-full h-full border-2 border-highlight/20 rounded-full animate-spin-slow group-hover:border-highlight/40"></div>
+                            </div>
+                            
+                            <!-- Particle Effects on Hover -->
+                            <div class="absolute -inset-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                                <div class="absolute top-0 left-1/4 w-2 h-2 bg-accent rounded-full animate-float"></div>
+                                <div class="absolute bottom-0 right-1/4 w-2 h-2 bg-highlight rounded-full animate-float delay-150"></div>
+                                <div class="absolute top-1/4 right-0 w-2 h-2 bg-white rounded-full animate-float delay-300"></div>
+                                <div class="absolute bottom-1/4 left-0 w-2 h-2 bg-white rounded-full animate-float delay-500"></div>
+                            </div>
+                                        
+                                        <!-- Decorative Lines -->
+                                        <div class="absolute top-0 left-1/4 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent"></div>
+                                        <div class="absolute bottom-0 left-1/4 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-highlight to-transparent"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Back Face -->
+                                <div class="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-gray-900 to-black">
+                                    <div class="relative h-full p-8 flex flex-col items-center justify-center text-center">
+                                        <div class="space-y-4">
+                                            <h3 class="text-2xl font-bold bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent">
+                                                Aung Myint Myat
+                                            </h3>
+                                            <p class="text-gray-300">Digital & Communication Engineering</p>
+                                            <div class="flex justify-center gap-4 mt-4">
+                                                <span class="w-3 h-3 rounded-full bg-accent animate-ping"></span>
+                                                <span class="w-3 h-3 rounded-full bg-highlight animate-ping delay-200"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Corner Elements -->
+                            <div class="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-accent"></div>
+                            <div class="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-highlight"></div>
+                        </div>
+                    </div>
+
+                    <!-- Add required styles -->
+                    <style>
+                        .perspective-1000 {
+                            perspective: 1000px;
+                        }
+                        .preserve-3d {
+                            transform-style: preserve-3d;
+                        }
+                        .backface-hidden {
+                            backface-visibility: hidden;
+                        }
+                        .rotate-y-180 {
+                            transform: rotateY(180deg);
+                        }
+                        .clip-path-custom {
+                            clip-path: polygon(
+                                0% 20%, 20% 0%, 80% 0%, 100% 20%,
+                                100% 80%, 80% 100%, 20% 100%, 0% 80%
+                            );
+                        }
+                        .delay-200 {
+                            animation-delay: 200ms;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Unique Hexagonal Education Journey -->
+    <section id="education" class="min-h-screen relative overflow-hidden py-10">
+        <!-- Dynamic Hexagonal Background -->
+        <div class="absolute inset-0">
+            <!-- Hexagonal Pattern Overlay -->
+            <div class="absolute inset-0 opacity-[0.03]">
+                <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                    <pattern id="hexPattern" x="0" y="0" width="20" height="17.32" patternUnits="userSpaceOnUse">
+                        <polygon points="10,1 19,6 19,15 10,20 1,15 1,6" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    </pattern>
+                    <rect width="100%" height="100%" fill="url(#hexPattern)" class="text-accent"/>
+                </svg>
+            </div>
+            
+            <!-- Floating Geometric Elements -->
+            <div class="absolute top-1/4 left-1/5 w-32 h-32 border border-accent/20 rotate-45 animate-spin-slow"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-24 h-24 border border-highlight/20 rounded-full animate-pulse"></div>
+            <div class="absolute top-1/2 left-1/3 w-16 h-16 bg-gradient-to-br from-accent/10 to-transparent transform rotate-12 animate-float opacity-60"></div>
+            
+            <!-- Gradient Orbs -->
+            <div class="absolute top-1/6 right-1/6 w-96 h-96 bg-gradient-radial from-accent/8 via-accent/3 to-transparent rounded-full filter blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-1/5 left-1/5 w-80 h-80 bg-gradient-radial from-highlight/8 via-highlight/3 to-transparent rounded-full filter blur-3xl animate-pulse-slow delay-1000"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Futuristic Header with Animated Elements -->
+            <div class="text-center mb-20" data-aos="fade-down">
+                <div class="relative inline-block">
+                    <!-- Animated Halo -->
+                    <div class="absolute -inset-8 bg-gradient-conic from-accent/20 via-transparent via-highlight/20 to-transparent rounded-full blur-2xl animate-spin-slow opacity-60"></div>
+                    
+                    <h2 class="text-5xl md:text-7xl font-bold relative z-10 mb-6">
+                        <span class="bg-gradient-to-r from-accent via-white to-highlight bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+                            Education Journey
+                        </span>
+                        <br>
+                    </h2>
+                </div>
+                
+                <!-- Particle Network -->
+                <div class="flex items-center justify-center gap-4 mt-8 mb-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2 h-2 bg-accent rounded-full animate-ping"></div>
+                        <div class="w-8 h-px bg-gradient-to-r from-accent to-transparent"></div>
+                    </div>
+                    <div class="w-4 h-4 bg-gradient-to-r from-accent to-highlight rounded-full animate-pulse"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-px bg-gradient-to-l from-highlight to-transparent"></div>
+                        <div class="w-2 h-2 bg-highlight rounded-full animate-ping delay-500"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Simple & Clean Education Journey -->
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Section Header -->
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/20 rounded-full mb-6">
+                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                        <span class="text-accent font-medium text-sm">LEARNING PATH</span>
+                    </div>
+                </div>
+                
+                <!-- Simple Timeline -->
+                <div class="relative">
+                    
+                    <!-- Timeline Line -->
+                    <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-highlight to-accent transform md:-translate-x-1/2"></div>
+                    
+                    <!-- Education Steps -->
+                    <div class="space-y-16 md:space-y-20">
+                        
+                        <!-- High School -->
+                        <div class="relative flex items-center" data-aos="fade-right" data-aos-delay="200">
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white transform md:-translate-x-1/2 z-10"></div>
+                            
+                            <!-- Content Card -->
+                            <div class="ml-16 md:ml-0 md:w-1/2 md:pr-16">
+                                <div class="group bg-gradient-to-br from-white/8 to-white/3 backdrop-blur-sm border border-white/10 hover:border-blue-500/30 rounded-2xl p-8 transition-all duration-500 hover:transform hover:scale-105">
+                                    
+                                    <div class="flex items-start gap-6">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                            <i class="fas fa-graduation-cap text-2xl text-blue-400"></i>
+                                        </div>
+                                        
+                                        <div class="flex-1">
+                                            <span class="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-sm font-medium mb-3">2008 - 2013</span>
+                                            <h3 class="text-2xl font-bold text-white mb-2">High School</h3>
+                                            <p class="text-blue-400 font-semibold mb-2">No.(2), BEHS</p>
+                                            <p class="text-gray-400 text-sm mb-4">Chauk, Myanmar</p>
+                                            <div class="flex items-center gap-2 text-sm text-gray-400">
+                                                <i class="fas fa-award text-blue-400"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- University -->
+                        <div class="relative flex items-center" data-aos="fade-left" data-aos-delay="400">
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-highlight rounded-full border-4 border-white transform md:-translate-x-1/2 z-10"></div>
+                            
+                            <!-- Content Card -->
+                            <div class="ml-16 md:ml-0 md:w-1/2 md:pl-16 md:ml-1/2">
+                                <div class="group bg-gradient-to-br from-white/8 to-white/3 backdrop-blur-sm border border-white/10 hover:border-highlight/30 rounded-2xl p-8 transition-all duration-500 hover:transform hover:scale-105">
+                                    
+                                    <div class="flex items-start gap-6">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-highlight/20 to-pink-600/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                            <i class="fas fa-cogs text-2xl text-highlight"></i>
+                                        </div>
+                                        
+                                        <div class="flex-1">
+                                            <span class="inline-block px-3 py-1 bg-highlight/10 text-highlight border border-highlight/20 rounded-full text-sm font-medium mb-3">2014 - 2020</span>
+                                            <h3 class="text-2xl font-bold text-white mb-2">Technological University (Taunggyi)</h3>
+                                            <p class="text-gray-400 text-sm mb-4">Taunggyi, Myanmar</p>
+                                            
+                                            <div class="flex items-center gap-2 text-sm text-gray-400">
+                                                <i class="fas fa-trophy text-highlight"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Current Education -->
+                        <div class="relative flex items-center" data-aos="fade-right" data-aos-delay="600">
+                            <!-- Enhanced Timeline Dot -->
+                            <div class="absolute left-6 md:left-1/2 w-6 h-6 bg-accent rounded-full border-4 border-white transform md:-translate-x-1/2 z-10 animate-pulse"></div>
+                            <div class="absolute left-4 md:left-1/2 w-10 h-10 bg-accent/20 rounded-full transform md:-translate-x-1/2 animate-ping"></div>
+                            
+                            <!-- Enhanced Content Card -->
+                            <div class="ml-16 md:ml-0 md:w-1/2 md:pr-16">
+                                <div class="group bg-gradient-to-br from-white/12 to-white/6 backdrop-blur-sm border-2 border-accent/30 hover:border-accent/60 rounded-2xl p-10 transition-all duration-500 hover:transform hover:scale-105 shadow-2xl shadow-accent/10">
+                                    
+                                    <!-- Current Status Badge -->
+                                    <div class="absolute -top-4 left-8">
+                                        <div class="flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-400 border-2 border-green-500/40 rounded-full text-xs font-bold backdrop-blur-sm">
+                                            <div class="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                                            CURRENT
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-6">
+                                        <div class="w-20 h-20 bg-gradient-to-br from-accent/20 to-cyan-600/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                            <i class="fas fa-university text-3xl text-accent"></i>
+                                        </div>
+                                        
+                                        <div class="flex-1">
+                                            <span class="inline-block px-4 py-2 bg-accent/10 text-accent border border-accent/20 rounded-full font-medium mb-4">2023 - Present</span>
+                                            <h3 class="text-3xl font-bold text-white mb-3">Mae Fah Luang University</h3>
+                                            <p class="text-accent font-semibold text-lg mb-2">Digital & Communication Engineering</p>
+                                            <p class="text-gray-400 text-sm mb-6">Chiang Rai, Thailand</p>
+                                            
+                                            <!-- Progress Bar -->
+                                            <div class="mb-4">
+                                                <div class="flex justify-between text-sm text-gray-400 mb-2">
+                                                    <span>Progress</span>
+                                                    <span>75%</span>
+                                                </div>
+                                                <div class="h-3 bg-white/10 rounded-full overflow-hidden">
+                                                    <div class="h-full bg-gradient-to-r from-accent to-cyan-400 rounded-full transition-all duration-1000" style="width: 75%"></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Focus Areas -->
+                                            <div class="flex flex-wrap gap-2">
+                                                <span class="px-3 py-1 text-xs bg-accent/10 text-accent border border-accent/20 rounded-full">IoT Systems</span>
+                                                <span class="px-3 py-1 text-xs bg-accent/10 text-accent border border-accent/20 rounded-full">Digital Signal</span>
+                                                <span class="px-3 py-1 text-xs bg-accent/10 text-accent border border-accent/20 rounded-full">Networks</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <!-- Add spacing between sections -->
+        <div class="py-16 md:py-24"></div>
+
+        <!-- Unified Styles -->
+        <style>
+            :root {
+                --accent: #00fff7;
+                --highlight: #ff00ea;
+            }
+
+            /* Global Glass Effect */
+            .glass-morphism,
+            .glass {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            }
+
+            /* Modern Transitions */
+            .transition-all {
+                transition-property: all;
+                transition-duration: 500ms;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            /* Card Interactions */
+            .hover\:scale-105:hover {
+                transform: scale(1.05);
+            }
+            
+            .hover\:-rotate-1:hover {
+                transform: rotate(-1deg) scale(1.05);
+            }
+
+            .hover\:rotate-1:hover {
+                transform: rotate(1deg) scale(1.05);
+            }
+
+            /* Animation Keyframes */
+            @keyframes float {
+                0%, 100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+                50% { transform: translateY(-20px) rotate(180deg); opacity: 0.7; }
+            }
+
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.5; }
+            }
+
+            @keyframes gradient {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
+
+            @keyframes ping {
+                75%, 100% {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes spin-slow {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            
+            @keyframes spin-reverse {
+                from { transform: rotate(360deg); }
+                to { transform: rotate(0deg); }
+            }
+            
+            @keyframes draw {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+
+            /* Animations */
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+
+            .animate-pulse-slow {
+                animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+            
+            .animate-spin-slow {
+                animation: spin-slow 20s linear infinite;
+            }
+            
+            .animate-spin-reverse {
+                animation: spin-reverse 15s linear infinite;
+            }
+            
+            .animate-draw {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: draw 3s ease-in-out forwards 1s;
+            }
+            
+            /* Hexagonal Education System Styles */
+            .hexagon-shape {
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+            
+            .hexagon-container {
+                position: relative;
+                transform-style: preserve-3d;
+            }
+            
+            .satellite-module {
+                position: relative;
+                backdrop-filter: blur(10px);
+                transform-style: preserve-3d;
+            }
+            
+            .hexagon-container:hover .hexagon-shape {
+                filter: drop-shadow(0 0 20px rgba(0, 255, 247, 0.3));
+            }
+            
+            .satellite-module::before {
+                content: '';
+                position: absolute;
+                inset: -2px;
+                background: conic-gradient(from 0deg, transparent, var(--accent), transparent);
+                border-radius: inherit;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+                z-index: -1;
+            }
+            
+            .satellite-module:hover::before {
+                opacity: 0.6;
+            }
+            
+            /* Timeline Constellation Styles */
+            .constellation-node {
+                position: relative;
+                animation: constellation-float 6s ease-in-out infinite;
+            }
+            
+            .constellation-node:nth-child(2) {
+                animation-delay: -2s;
+            }
+            
+            .constellation-node:nth-child(3) {
+                animation-delay: -4s;
+            }
+            
+            .constellation-node:nth-child(4) {
+                animation-delay: -6s;
+            }
+            
+            @keyframes constellation-float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                25% { transform: translateY(-10px) rotate(1deg); }
+                50% { transform: translateY(-5px) rotate(0deg); }
+                75% { transform: translateY(-15px) rotate(-1deg); }
+            }
+            
+            .timeline-path {
+                stroke-dasharray: 20;
+                animation: timeline-flow 8s linear infinite;
+            }
+            
+            @keyframes timeline-flow {
+                0% { stroke-dashoffset: 0; }
+                100% { stroke-dashoffset: -160; }
+            }
+            
+            .constellation-dot {
+                animation: constellation-twinkle 3s ease-in-out infinite;
+            }
+            
+            @keyframes constellation-twinkle {
+                0%, 100% { opacity: 0.2; transform: scale(1); }
+                50% { opacity: 1; transform: scale(1.2); }
+            }
+            
+            /* Flowing particles effect */
+            .timeline-path::after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                background: radial-gradient(circle, var(--accent), transparent);
+                border-radius: 50%;
+                animation: particle-flow 4s linear infinite;
+            }
+            
+            @keyframes particle-flow {
+                0% { 
+                    offset-distance: 0%; 
+                    opacity: 0; 
+                }
+                10% { opacity: 1; }
+                90% { opacity: 1; }
+                100% { 
+                    offset-distance: 100%; 
+                    opacity: 0; 
+                }
+            }
+            
+            /* 3D Holographic Pyramid Styles */
+            .perspective-1000 {
+                perspective: 1000px;
+            }
+            
+            .transform-style-3d {
+                transform-style: preserve-3d;
+            }
+            
+            .pyramid-container {
+                height: 500px;
+                position: relative;
+                transform-style: preserve-3d;
+            }
+            
+            .pyramid-base, .pyramid-level-2, .pyramid-level-3, .pyramid-apex {
+                transform-style: preserve-3d;
+                transition: transform 0.8s ease-in-out;
+            }
+            
+            .pyramid-container:hover .pyramid-base {
+                transform: translateX(-50%) rotateY(15deg) rotateX(5deg);
+            }
+            
+            .pyramid-container:hover .pyramid-level-2 {
+                transform: translateX(-50%) translateY(-16px) rotateY(12deg) rotateX(3deg);
+            }
+            
+            .pyramid-container:hover .pyramid-level-3 {
+                transform: translateX(-50%) translateY(-24px) rotateY(8deg) rotateX(2deg);
+            }
+            
+            .pyramid-container:hover .pyramid-apex {
+                transform: translateX(-50%) translateY(-32px) rotateY(5deg) rotateX(1deg);
+            }
+            
+            /* Holographic Effects */
+            .holo-grid {
+                background-image: 
+                    linear-gradient(rgba(0, 255, 247, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 247, 0.1) 1px, transparent 1px);
+                background-size: 50px 50px;
+                animation: holo-grid-drift 20s linear infinite;
+            }
+            
+            .holo-cell {
+                background: radial-gradient(circle, rgba(0, 255, 247, 0.1) 0%, transparent 70%);
+                border-radius: 2px;
+            }
+            
+            @keyframes holo-grid-drift {
+                0% { transform: translate(0, 0); }
+                100% { transform: translate(50px, 50px); }
+            }
+            
+            @keyframes scan {
+                0% { transform: translateY(-100%); opacity: 0; }
+                50% { opacity: 1; }
+                100% { transform: translateY(100%); opacity: 0; }
+            }
+            
+            .animate-scan {
+                animation: scan 3s ease-in-out infinite;
+            }
+            
+            @keyframes shimmer {
+                0% { transform: translateX(-100%); }
+                100% { transform: translateX(100%); }
+            }
+            
+            .animate-shimmer {
+                animation: shimmer 2s ease-in-out infinite;
+            }
+            
+            .holo-progress {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .holo-progress::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                animation: shimmer 2s ease-in-out infinite;
+            }
+            
+            .holographic-panel {
+                position: relative;
+                backdrop-filter: blur(20px);
+            }
+            
+            .holographic-panel::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(45deg, transparent, rgba(0, 255, 247, 0.1), transparent);
+                border-radius: inherit;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+            
+            .holographic-panel:hover::before {
+                opacity: 1;
+            }
+            
+            /* Rotation Utilities */
+            .rotate-y-2 { transform: rotateY(2deg); }
+            .rotate-y-4 { transform: rotateY(4deg); }
+            .rotate-y-8 { transform: rotateY(8deg); }
+            .rotate-y-12 { transform: rotateY(12deg); }
+            
+            /* Enhanced 3D hover effects */
+            .pyramid-base:hover {
+                transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+            }
+            
+            .pyramid-level-2:hover {
+                transform: rotateX(8deg) rotateY(8deg) scale(1.05);
+            }
+            
+            .pyramid-level-3:hover {
+                transform: rotateX(6deg) rotateY(6deg) scale(1.05);
+            }
+            
+            .pyramid-apex:hover {
+                transform: rotateX(4deg) rotateY(4deg) scale(1.05);
+            }
+
+            .animate-gradient {
+                animation: gradient 15s ease infinite;
+                background-size: 200% auto;
+            }
+
+            .animate-pulse {
+                animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+
+            .animate-ping {
+                animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+            }
+
+            /* Delay utilities */
+            .delay-150 {
+                animation-delay: 150ms;
+            }
+
+            .delay-300 {
+                animation-delay: 300ms;
+            }
+
+            .delay-1000 {
+                animation-delay: 1000ms;
+            }
+
+            /* Color utilities */
+            .text-accent { color: var(--accent); }
+            .bg-accent { background-color: var(--accent); }
+            .text-highlight { color: var(--highlight); }
+            .bg-highlight { background-color: var(--highlight); }
+
+            body {
+                background: #0a0a0a;
+                color: white;
+                font-family: system-ui, -apple-system, sans-serif;
+            }
+        </style>
+    </section>
+
+      <!-- CLEAN & MODERN SKILLS SECTION -->
+    <section id="skills" class="py-8 relative overflow-hidden">
+        <!-- Subtle Background -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 right-20 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-64 h-64 bg-highlight/5 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Clean Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/20 rounded-full mb-6">
+                    <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                    <span class="text-accent font-medium text-sm">TECHNICAL SKILLS</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Skills & Technologies</h2>
+            </div>
+            
+            <!-- Clean Skills Grid -->
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Skills Categories -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <!-- Frontend Development -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-gradient-to-br from-white/8 to-white/3 backdrop-blur-sm border border-white/10 group-hover:border-accent/30 rounded-2xl p-8 transition-all duration-500 hover:transform hover:scale-105">
+                            
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                    <i class="fas fa-code text-2xl text-accent"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors duration-300">Frontend Development</h3>
+                                    <p class="text-gray-400 text-sm">User Interface & Experience</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Skills List -->
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fab fa-html5 text-[#e44d26]"></i>
+                                        <span class="text-white">HTML5</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#e44d26] to-[#f16529] rounded-full" style="width: 95%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">95%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fab fa-css3-alt text-[#1572b6]"></i>
+                                        <span class="text-white">CSS3</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#1572b6] to-[#33a9dc] rounded-full" style="width: 90%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">90%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fab fa-js-square text-[#f7df1e]"></i>
+                                        <span class="text-white">JavaScript</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#f7df1e] to-[#e6cc00] rounded-full" style="width: 85%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">85%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs bg-accent/10 text-accent border border-accent/20 rounded-full">Responsive Design</span>
+                                <span class="px-3 py-1 text-xs bg-accent/10 text-accent border border-accent/20 rounded-full">Modern CSS</span>
+                                <span class="px-3 py-1 text-xs bg-accent/10 text-accent border border-accent/20 rounded-full">ES6+</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend Development -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-gradient-to-br from-white/8 to-white/3 backdrop-blur-sm border border-white/10 group-hover:border-highlight/30 rounded-2xl p-8 transition-all duration-500 hover:transform hover:scale-105">
+                            
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-highlight/20 to-highlight/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                    <i class="fas fa-server text-2xl text-highlight"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white group-hover:text-highlight transition-colors duration-300">Backend Development</h3>
+                                    <p class="text-gray-400 text-sm">Server-Side Logic & APIs</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Skills List -->
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-hashtag text-[#68217a]"></i>
+                                        <span class="text-white">C#</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#68217a] to-[#9b4993] rounded-full" style="width: 85%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">85%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-database text-[#336791]"></i>
+                                        <span class="text-white">SQL Server</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#336791] to-[#4a90bb] rounded-full" style="width: 80%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">80%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-cogs text-[#512bd4]"></i>
+                                        <span class="text-white">.NET Core</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#512bd4] to-[#7c4dff] rounded-full" style="width: 82%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">82%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs bg-highlight/10 text-highlight border border-highlight/20 rounded-full">RESTful APIs</span>
+                                <span class="px-3 py-1 text-xs bg-highlight/10 text-highlight border border-highlight/20 rounded-full">Entity Framework</span>
+                                <span class="px-3 py-1 text-xs bg-highlight/10 text-highlight border border-highlight/20 rounded-full">MVC</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Creative & Tools -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="500">
+                        <div class="bg-gradient-to-br from-white/8 to-white/3 backdrop-blur-sm border border-white/10 group-hover:border-blue-400/30 rounded-2xl p-8 transition-all duration-500 hover:transform hover:scale-105">
+                            
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-blue-500/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                    <i class="fas fa-cube text-2xl text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">Creative & Tools</h3>
+                                    <p class="text-gray-400 text-sm">Game Development & Cloud</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Skills List -->
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-cube text-accent"></i>
+                                        <span class="text-white">Unity 3D</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-accent to-cyan-400 rounded-full" style="width: 80%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">80%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fab fa-aws text-[#ff9900]"></i>
+                                        <span class="text-white">AWS</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#ff9900] to-[#ffb84d] rounded-full" style="width: 75%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">75%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fab fa-git-alt text-[#f05032]"></i>
+                                        <span class="text-white">Git</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-16 bg-white/10 rounded-full overflow-hidden">
+                                            <div class="h-full bg-gradient-to-r from-[#f05032] to-[#f77f5c] rounded-full" style="width: 88%"></div>
+                                        </div>
+                                        <span class="text-xs text-gray-400 min-w-[30px]">88%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tags -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full">Game Design</span>
+                                <span class="px-3 py-1 text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full">Cloud Services</span>
+                                <span class="px-3 py-1 text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full">Version Control</span>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            
+        </div>
+
+        <!-- Advanced CSS Styles -->
+        <style>
+            /* Revolutionary 3D Transforms */
+            .perspective-1000 { perspective: 1000px; }
+            .preserve-3d { transform-style: preserve-3d; }
+            .rotateY-12 { transform: rotateY(12deg); }
+            
+            /* Glass Morphism Advanced */
+            .glass-morphism-advanced {
+                background: rgba(255, 255, 255, 0.02);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            }
+            
+            /* Advanced Animations */
+            @keyframes float-slow {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-20px) rotate(180deg); }
+            }
+            
+            @keyframes float-reverse {
+                0%, 100% { transform: translateY(0px) rotate(360deg); }
+                50% { transform: translateY(-30px) rotate(180deg); }
+            }
+            
+            @keyframes orbit-slow {
+                from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+                to { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+            }
+            
+            @keyframes orbit-reverse {
+                from { transform: rotate(360deg) translateX(25px) rotate(360deg); }
+                to { transform: rotate(0deg) translateX(25px) rotate(0deg); }
+            }
+            
+            /* Animation Classes */
+            .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+            .animate-float-reverse { animation: float-reverse 12s ease-in-out infinite; }
+            .animate-orbit-slow { animation: orbit-slow 8s linear infinite; }
+            .animate-orbit-reverse { animation: orbit-reverse 6s linear infinite; }
+            .animate-gradient { 
+                animation: gradient 15s ease infinite;
+                background-size: 200% auto;
+            }
+            
+            @keyframes gradient {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
+        </style>
+    </section>
+
+      <!-- GSAP 3D CERTIFICATE CAROUSEL -->
+    <section id="certificate" class="min-h-screen relative flex items-center justify-center hidden lg:flex" style="background: transparent;">
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6 text-white">
+                    Certificates
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Professional certifications showcasing expertise in modern technologies
+                </p>
+            </div>
+            
+            <!-- GSAP 3D Certificate Carousel -->
+            <div class="relative">
+                <!-- Certificate Cards Container -->
+                <div id="carousel-container" class="relative h-[28rem] perspective-1000 overflow-hidden">
+                    <!-- Certificate Cards -->
+                    <div class="certificate-card" data-index="0">
+                        <img src="image/HWDCTEDA233144.png" alt="Huawei Cloud Developer" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">HCCDA Tech Essentials
+                            </h3>
+                            <a href="image/HWDCTEDA233144.png" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-index="1">
+                        <img src="image/HCCDA-Cloud Native.png" alt="HCCDA Cloud Native" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">HCCDA Cloud Native</h3>
+                            <a href="image/HCCDA-Cloud Native.png" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-index="1">
+                        <img src="image/HCCDP Cloud Migration.png" alt="HCCDP Cloud Migration" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">HCCDP Cloud Migration</h3>
+                            <a href="image/HCCDP Cloud Migration.png" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-index="1">
+                        <img src="image/HCCDP_solution architect.png" alt="HCCDP Solution Architectures" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">HCCDP Solution Architectures</h3>
+                            <a href="image/HCCDP_solution architect.png" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-index="1">
+                        <img src="image/HCIA Cloud Service_page-0001.jpg" alt="HCIA Cloud Service" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">HCIA Cloud Service</h3>
+                            <a href="image/HCIA Cloud Service_page-0001.jpg" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-index="1">
+                        <img src="image/HCIA IoT_page-0001.jpg" alt="HCIA IoT" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">HCIA IoT</h3>
+                            <a href="image/HCIA IoT_page-0001.jpg" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-index="6">
+                        <img src="image/AWS Certified Cloud Practitioner certificate_page-0001.jpg" alt="AWS Certified" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">AWS Certified</h3>
+                            <p class="card-description">Cloud Practitioner</p>
+                            <a href="image/AWS Certified Cloud Practitioner certificate_page-0001.jpg" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card" data-index="7">
+                        <img src="image/HWENDCAIDA666269.png" alt="HUAWEI AI" class="card-image">
+                        <div class="card-overlay">
+                            <h3 class="card-title">HCCDA AI</h3>
+                            <a href="image/HWENDCAIDA666269.png" target="_blank" class="card-button">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-center mt-12 gap-8">
+                    <button id="prev-btn" class="nav-button group">
+                        <svg class="w-6 h-6 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        <span class="font-semibold">Previous</span>
+                    </button>
+                    <button id="next-btn" class="nav-button group">
+                        <span class="font-semibold">Next</span>
+                        <svg class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+                        </svg>
                     </button>
                 </div>
             </div>
-            <div class="col-md-6">
-              <img src="image/IMG_1428.jpg" alt="Aung" class="portfolio-image"> <!-- Added class for animation -->
-            </div>
-        </div>
-     </section>
-     <!-- Education -->
-      <section id="education">
-        <h2 class="title">Education</h2>
-        <div class="container mt-5">
-            <style>@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');</style>
-            <!--This is the main container that contains the whole timeline.-->
-            <section class="design-section">
-            <div class="timeline">
-            
-                      <!--Well, The reason for this div is to fill space. 
-            This space is technically used for keeping dates, 
-            but I didn't find the need for dates. However, I'll provide 
-            you the styling for dates, so that you can use it if you 
-            wanted to.-->
-                              <div class="timeline-empty">
-                              </div>
-            
-            <!--This is the class where the timeline graphics are 
-            housed in. Note that we have timeline-circle 
-            here for that pointer in timeline.-->
-            
-                           <div class="timeline-middle">
-                               <div class="timeline-circle"></div>
-                           </div>
-                           <div class="timeline-component timeline-content">
-                            <h3>No.(2), BEHS, Chauk</h3>
-                            <p>2008 - 2013</p>
-                       </div>
-                            <div class="timeline-component timeline-content">
-                                     <h3>Technological University, Taunggyi</h3>
-                                     <p>2014 - 2020</p>
-                            </div>
-                            <div class="timeline-middle">
-                                <div class="timeline-circle"></div>
-                            </div>
-                            <div class="timeline-empty">
-                            </div>
-            
-                            <div class="timeline-empty">
-                            </div>
-            
-                           <div class="timeline-middle">
-                               <div class="timeline-circle"></div>
-                           </div>
-                           <div class=" timeline-component timeline-content">
-                            <h3>Mae Fah Luang University</h3>
-                            <p>Present</p>
-                       </div>
-            
-                   </div>
-                </div> 
-      </section>
 
-      <!-- Skills Section -->
-      <section id="skills">
-  <h2 class="title">Skills</h2>
-  <div class="container">
-    <div class="row justify-content-center">
-      <!-- HTML Skill -->
-      <div class="col-md-3 col-6 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <i class="fab fa-html5 fa-3x mb-2" style="color:#e44d26;"></i>
-            <h5 class="card-title mt-2">HTML</h5>
-          </div>
-        </div>
-      </div>
-      <!-- CSS Skill -->
-      <div class="col-md-3 col-6 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <i class="fab fa-css3-alt fa-3x mb-2" style="color:#1572b6;"></i>
-            <h5 class="card-title mt-2">CSS</h5>
-          </div>
-        </div>
-      </div>
-      <!-- C# Skill -->
-      <div class="col-md-3 col-6 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-code fa-3x mb-2" style="color:#68217a;"></i>
-            <h5 class="card-title mt-2">C#</h5>
-          </div>
-        </div>
-      </div>
-      <!-- 3D Game Development Skill -->
-      <div class="col-md-3 col-6 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-cube fa-3x mb-2" style="color:#00fff7;"></i>
-            <h5 class="card-title mt-2">3D Game Development</h5>
-          </div>
-        </div>
-      </div>
-      <!-- Cloud Practitioner Skill -->
-      <div class="col-md-3 col-6 mb-4">
-        <div class="card text-center shadow-sm">
-          <div class="card-body">
-            <i class="fas fa-cloud fa-3x mb-2" style="color:#ff00ea;"></i>
-            <h5 class="card-title mt-2">Cloud Practitioner</h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-      <!-- Certificate -->
-      <!-- Certificate Section -->
-    <section id="certificate">
-      <h2 class="title">Certificate</h2>
-      <div class="container">
-        <div class="row g-4">
-          <!-- Huawei Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/HWDCTEDA233144.png" alt="Huawei Cloud Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>Huawei Cloud Developer Certification</h5>
-                <p>HCIA Cloud Service Developer certification demonstrating expertise in cloud computing.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/HWDCTEDA233144.png?alt=media&token=3253e732-1701-4f50-98ec-f860899e65f8" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <!-- Google Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/Foundation of Cybersecurity_page-0001.jpg" alt="Google Cybersecurity Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>Google Cybersecurity Foundations</h5>
-                <p>Comprehensive training in cybersecurity fundamentals from Google.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/Foundation%20of%20Cybersecurity_page-0001.jpg?alt=media&token=b22e051d-85fb-475c-8dcd-2f7d93eae363" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <!-- Cybrary Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/cybrary-cert-careers-in-cybersecurity.jpg" alt="Cybrary Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>Cybrary - Careers in Cybersecurity</h5>
-                <p>Professional certification in cybersecurity career paths.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/cybrary-cert-careers-in-cybersecurity.jpg?alt=media&token=e0a87d5c-697e-4aae-bdf6-9d6fe423eff7" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <!-- Agoda Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/Agoda Tech Camp2024.jpg" alt="Agoda Tech Camp Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>Agoda Tech Camp 2024</h5>
-                <p>Participation in Agoda's technology and development training program.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/Agoda%20Tech%20Camp2024.jpg?alt=media&token=f1eadd00-ae70-4420-9bce-465001767e11" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <!-- Professional Development Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/6631502055.jpg" alt="Professional Development Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>Ready for the New-Age Career with AI Certificate</h5>
-                <p>Recognition of advanced professional development and expertise.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/6631502055.jpg?alt=media&token=c99758c9-fb4f-4065-b50e-7d769f5adb30" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <!-- JIWC Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/10_04_Aung Myint Myat_JIWC 2024 Certificate of participation_page-0001.jpg" alt="JIWC 2024 Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>JIWC 2024 Participation Certificate</h5>
-                <p>Recognition of participation in Japan International Work Camp 2024.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/10_04_Aung%20Myint%20Myat_JIWC%202024%20Certificate%20of%20participation_page-0001.jpg?alt=media&token=d880336b-ce15-47f3-acbd-f55151435a68" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <!-- AWS Cloud Practitioner Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/AWS Certified Cloud Practitioner certificate_page-0001.jpg" alt="AWS Cloud Practitioner Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>AWS Cloud Practitioner Certificate</h5>
-                <p>Recognition of Amazon Web Services expertise.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/AWS%20Certified%20Cloud%20Practitioner%20certificate_page-0001.jpg?alt=media&token=7ada10b2-432d-43ab-82e3-fc3e1cceb728" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
-          <!-- HUAWEI AI Certificate -->
-          <div class="col-md-4">
-            <div class="certificate-card">
-              <div class="certificate-img">
-                <img src="image/HWENDCAIDA666269.png" alt="HUAWEI AI Certificate">
-              </div>
-              <div class="certificate-content">
-                <h5>HUAWEI AI Certificate</h5>
-                <p>Recognition of artificial intelligence expertise.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/my-portfolio-2024-new.appspot.com/o/HWENDCAIDA666269.png?alt=media&token=8300cd25-8902-4e90-9489-9e9aa9ad54ac" target="_blank" class="view-btn">View Certificate</a>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+
+        <!-- GSAP 3D Carousel Styles -->
+        <style>
+            .perspective-1000 { 
+                perspective: 1000px; 
+            }
+
+            .certificate-card {
+                position: absolute;
+                width: 26rem;
+                height: 19rem;
+                border-radius: 1rem;
+                overflow: hidden;
+                background: #222;
+                box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.7), 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+                cursor: pointer;
+                transform-style: preserve-3d;
+                transition: box-shadow 0.4s ease;
+                left: 50%;
+                top: 50%;
+                transform-origin: center;
+            }
+
+            .certificate-card:hover {
+                box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.6), 0 8px 32px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.5);
+            }
+
+            .card-image {
+                width: 100%;
+                height: 75%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .certificate-card:hover .card-image {
+                transform: scale(1.03);
+            }
+
+            .card-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 25%;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
+                padding: 0.75rem 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .card-title {
+                color: white;
+                font-size: 0.85rem;
+                font-weight: 600;
+                margin-bottom: 0.2rem;
+                line-height: 1.2;
+            }
+
+            .card-description {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.65rem;
+                margin-bottom: 0.4rem;
+                line-height: 1.3;
+            }
+
+            .card-button {
+                color: #3b82f6;
+                font-size: 0.7rem;
+                font-weight: 500;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+
+            .card-button:hover {
+                color: #60a5fa;
+            }
+
+            .nav-button {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 1rem 2.5rem;
+                background: rgba(59, 130, 246, 0.1);
+                border: 2px solid rgba(59, 130, 246, 0.3);
+                border-radius: 3rem;
+                color: white;
+                font-weight: 700;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                backdrop-filter: blur(16px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(59, 130, 246, 0.2);
+                position: relative;
+                overflow: hidden;
+                min-width: 150px;
+                justify-content: center;
+            }
+
+            .nav-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+                transition: left 0.6s ease;
+            }
+
+            .nav-button:hover::before {
+                left: 100%;
+            }
+
+            .nav-button:hover {
+                background: rgba(59, 130, 246, 0.2);
+                border-color: rgba(59, 130, 246, 0.6);
+                transform: translateY(-4px) scale(1.05);
+                box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3), 0 6px 20px rgba(0, 0, 0, 0.4);
+            }
+
+            .nav-button:active {
+                transform: translateY(-2px) scale(1.02);
+            }
+
+            /* Hide on mobile/tablet */
+            @media (max-width: 1023px) {
+                #certificate {
+                    display: none !important;
+                }
+            }
+        </style>
     </section>
 
 <!-- Projects Section -->
-<section id="project">
-  <h2 class="title">Projects</h2>
-  <div class="container">
-    <div class="row g-4">
-      <!-- Project 1 -->
-      <div class="col-md-6">
-          <div class="video-container">
-            <video controls width="100%" preload="metadata">
-              <source src="video/project_video record.mkv" type="video/x-matroska">
-              <source src="video/project_video record.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="project-content">
-            <h3>My Backend Project 1</h3>
-            <p>I do this project for the school individual.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-       <!-- About -->
-        <section id="about">
-            <h2 class="title">About</h2>
-            <div class="container">
-                <p>
-                  I'm Aung Myint Myat, a Digital and Communication Engineering student at Mae Fah Luang University with expertise in cybersecurity, networking, AR, IoT, blockchain, and cloud computing. Passionate about creating impactful digital solutions, I specialize in VR, IoT automation, and blockchain applications. My goal: to bridge technology and user needs through innovative, user-centered projects.
-                </p>
-                <p>
-
-                </p>
-                <p>
-
-                </p>
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="image/13899905_5392786.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h1 class="card-title text-center">Experience</h1>
-                              <p class="card-text text-center">4 Years</p>
-                            </div>
-                          </div>
+<section id="project" class="min-h-screen relative overflow-hidden flex items-center">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+            <span class="bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent">Featured Projects</span>
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="group">
+                <div class="glass overflow-hidden rounded-xl transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-accent/20">
+                    <div class="relative aspect-video overflow-hidden">
+                        <video controls preload="metadata" class="w-full h-full object-cover">
+                            <source src="video/project_video record.mp4" type="video/mp4">
+                        </video>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="image/21779356_6524442.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h1 class="card-title text-center">Language</h1>
-                              <p class="card-text text-center">EN - MM - JP</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="image/6974855_4380.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                            <h1 class="card-title text-center">projects</h1>
-                              <p class="card-text text-center">5+</p>
-                            </div>
-                          </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="text-xl font-semibold text-white">Backend Development Project</h3>
+                        <p class="text-gray-300">A comprehensive backend solution developed as an individual school project, showcasing database management.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-<section id="contact" data-aos="fade-up">
-  <div class="container mt-5">
-    <h2 class="title text-start" style="color: white;">Contact</h2>
-    <div class="contact-details text-start">
-      <p>
-        <i class="fas fa-envelope"></i> 
-        Email: <a href="aungmyintmyatchauk@gmail.com" class="contact-link">aungmyintmyatchauk@gmail.com</a>
-      </p>
-      <p>
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-        LinkedIn: 
-        <a href="https://www.linkedin.com/in/aung-myint-myat-305316189/" class="contact-link" target="_blank" rel="noopener noreferrer">
-          Aung Myint Myat
-        </a>
-      </p>      
-      <p>
-        <i class="fab fa-line"></i> 
-        LINE: <a href="https://line.me/ti/p/aungdoublem" class="contact-link" target="_blank">aungdoublem</a>
-      </p>
-      <hr class="divider">
-      <p>I look forward to hearing from you!</p>
+        </div>
     </div>
-  </div>
 </section>
+
+<!-- MODERN MINIMALIST ABOUT ME SECTION -->
+<section id="about" class="min-h-screen relative overflow-hidden flex items-center py-20">
+    
+    <!-- Elegant Background -->
+    <div class="absolute inset-0">
+        <!-- Subtle Geometric Patterns -->
+        <div class="absolute inset-0 opacity-[0.02]">
+            <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_50%,rgba(0,255,247,0.1)_0%,transparent_50%)]"></div>
+            <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_30%,rgba(255,0,234,0.1)_0%,transparent_50%)]"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-1/4 left-1/6 w-64 h-64 bg-gradient-to-br from-accent/5 to-transparent rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-1/3 right-1/5 w-80 h-80 bg-gradient-to-tl from-highlight/5 to-transparent rounded-full filter blur-3xl"></div>
+        
+        <!-- Subtle Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)]"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        
+        <!-- Clean Modern Header -->
+        <div class="text-center mb-20" data-aos="fade-down">
+            <div class="relative">
+                <h2 class="text-5xl md:text-7xl font-light text-white mb-6 tracking-tight">
+                    About <span class="font-bold bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent">Me</span>
+                </h2>
+                
+                <div class="w-20 h-px bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-8"></div>
+                
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                    Junior Cloud Engineer  & Junior Game Developer
+                </p>
+            </div>
+        </div>
+        
+        <!-- Main Content Layout -->
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Profile Card -->
+            <div class="mb-16" data-aos="fade-up">
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12">
+                        
+                        <!-- Profile Header -->
+                        <div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8">
+                            <div class="relative group">
+                                <div class="absolute -inset-4 bg-gradient-to-r from-accent/20 to-highlight/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                                <div class="relative w-32 h-32 bg-gradient-to-br from-accent/20 to-highlight/20 rounded-full p-1">
+                                    <img src="image/IMG_1428.jpg" alt="Aung Myint Myat" class="w-full h-full object-cover rounded-full border-2 border-white/10">
+                                </div>
+                            </div>
+                            
+                            <div class="flex-1">
+                                <h3 class="text-3xl md:text-4xl font-light text-white mb-2">
+                                    Aung Myint Myat
+                                </h3>
+                                <p class="text-lg text-accent font-medium mb-2">Digital & Communication Engineering</p>
+                                <p class="text-gray-400">Mae Fah Luang University</p>
+                                
+                                <!-- Status Badges -->
+                                <div class="flex flex-wrap gap-2 mt-4">
+                                    <span class="px-3 py-1 text-xs bg-green-500/20 text-green-400 border border-green-500/30 rounded-full">Available for Projects</span>
+                                    <span class="px-3 py-1 text-xs bg-accent/20 text-accent border border-accent/30 rounded-full">Open to Collaborate</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- About Text -->
+                        <div class="prose prose-lg prose-invert max-w-none">
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                I'm a passionate digital engineer with expertise spanning <strong class="text-white">cybersecurity</strong>, 
+                                <strong class="text-accent">cloud computing</strong>, AR/VR, IoT, and <strong class="text-highlight">blockchain development</strong>. 
+                                My mission is to bridge technology and human needs through innovative, user-centered solutions.
+                            </p>
+                            
+                            <p class="text-gray-300 leading-relaxed">
+                                I specialize in creating digital experiences that not only solve complex problems but also enhance 
+                                user interactions and drive technological advancement in our rapidly evolving digital landscape.
+                            </p>
+                        </div>
+                        
+                        <!-- Tech Stack -->
+                        <div class="mt-8">
+                            <h4 class="text-white font-medium mb-4">Core Technologies</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-4 py-2 text-sm bg-white/5 hover:bg-accent/10 text-gray-300 hover:text-accent border border-white/10 hover:border-accent/30 rounded-full transition-all duration-300 cursor-default">Cybersecurity</span>
+                                <span class="px-4 py-2 text-sm bg-white/5 hover:bg-highlight/10 text-gray-300 hover:text-highlight border border-white/10 hover:border-highlight/30 rounded-full transition-all duration-300 cursor-default">Cloud Computing</span>
+                                <span class="px-4 py-2 text-sm bg-white/5 hover:bg-blue-500/10 text-gray-300 hover:text-blue-400 border border-white/10 hover:border-blue-500/30 rounded-full transition-all duration-300 cursor-default">AR/VR</span>
+                                <span class="px-4 py-2 text-sm bg-white/5 hover:bg-green-500/10 text-gray-300 hover:text-green-400 border border-white/10 hover:border-green-500/30 rounded-full transition-all duration-300 cursor-default">IoT Systems</span>
+                                <span class="px-4 py-2 text-sm bg-white/5 hover:bg-purple-500/10 text-gray-300 hover:text-purple-400 border border-white/10 hover:border-purple-500/30 rounded-full transition-all duration-300 cursor-default">Blockchain</span>
+                                <span class="px-4 py-2 text-sm bg-white/5 hover:bg-orange-500/10 text-gray-300 hover:text-orange-400 border border-white/10 hover:border-orange-500/30 rounded-full transition-all duration-300 cursor-default">3D Development</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA -->
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent/10 to-highlight/10 hover:from-accent/20 hover:to-highlight/20 border border-accent/30 hover:border-accent/50 rounded-full text-white transition-all duration-300 group">
+                                <span class="font-medium">Let's Connect</span>
+                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats Grid - Centered 3 Cards -->
+            <div class="flex justify-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl w-full">
+                    
+                    <!-- Languages Card -->
+                    <div class="group relative">
+                        <div class="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 group-hover:border-highlight/30 rounded-2xl p-6 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-highlight/20 to-highlight/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-globe text-highlight text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white">3</h4>
+                                    <p class="text-sm text-gray-400">Languages</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-300">EN • MM • JP</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Projects Card -->
+                    <div class="group relative">
+                        <div class="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 group-hover:border-blue-400/30 rounded-2xl p-6 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-blue-500/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-rocket text-blue-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white">10+</h4>
+                                    <p class="text-sm text-gray-400">Projects</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-300">Completed & Deployed</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certificates Card -->
+                    <div class="group relative">
+                        <div class="bg-gradient-to-br from-white/5 to-white/2 backdrop-blur-sm border border-white/10 group-hover:border-yellow-400/30 rounded-2xl p-6 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-yellow-500/10 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-trophy text-yellow-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white">8+</h4>
+                                    <p class="text-sm text-gray-400">Certificates</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-300">Professional Recognition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- INTERACTIVE FLOATING CONTACT SECTION -->
+<section id="contact" class="min-h-screen relative overflow-hidden flex items-center">
+    
+    <!-- Dynamic Floating Background -->
+    <div class="absolute inset-0">
+        <!-- Animated Orbs -->
+        <div class="absolute top-1/4 left-1/5 w-72 h-72 bg-gradient-to-br from-accent/15 to-transparent rounded-full filter blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/5 w-96 h-96 bg-gradient-to-tl from-highlight/15 to-transparent rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full filter blur-3xl animate-pulse delay-500"></div>
+        
+        <!-- Floating Geometric Shapes -->
+        <div class="absolute top-20 right-1/3 w-4 h-4 bg-accent/30 rounded-full animate-float"></div>
+        <div class="absolute bottom-32 left-1/4 w-3 h-3 bg-highlight/40 rounded-full animate-float delay-700"></div>
+        <div class="absolute top-1/3 right-1/4 w-2 h-2 bg-blue-400/50 rounded-full animate-float delay-300"></div>
+        
+        <!-- Subtle Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:120px_120px] opacity-40"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        
+        <!-- Modern Header -->
+        <div class="text-center mb-20" data-aos="fade-down">
+            <div class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-full mb-8">
+                <div class="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Let's Connect</span>
+                <div class="w-3 h-3 bg-highlight rounded-full animate-pulse delay-500"></div>
+            </div>
+            
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+                Ready to <span class="bg-gradient-to-r from-accent via-blue-400 to-highlight bg-clip-text text-transparent">Collaborate</span>?
+            </h2>
+            
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                I'm always excited to work on new projects and connect with fellow developers, designers, and innovators.
+            </p>
+        </div>
+        
+        <!-- Interactive Contact Cards -->
+        <div class="max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                
+                <!-- Email Contact Card -->
+                <a href="mailto:aungmyintmyatchauk@gmail.com" class="group relative block transform hover:scale-105 transition-all duration-500">
+                    <!-- Animated Border -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-accent via-accent/50 to-accent rounded-3xl blur opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
+                    
+                    <!-- Card Content -->
+                    <div class="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 group-hover:border-accent/50 rounded-3xl p-8 h-full transition-all duration-500">
+                        
+                        <!-- Floating Icon -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 mx-auto">
+                                <i class="fas fa-envelope text-accent text-3xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <!-- Floating particles -->
+                            <div class="absolute -top-2 -right-2 w-3 h-3 bg-accent/60 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-500"></div>
+                            <div class="absolute -bottom-2 -left-2 w-2 h-2 bg-accent/40 rounded-full opacity-0 group-hover:opacity-100 animate-ping delay-200 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300">Email Me</h3>
+                            <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300 mb-4">Send me a direct message</p>
+                            <div class="text-accent font-medium text-sm group-hover:text-white transition-colors duration-300">
+                                aungmyintmyatchauk@gmail.com
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </a>
+                
+                <!-- LinkedIn Contact Card -->
+                <a href="https://www.linkedin.com/in/aung-myint-myat-305316189/" target="_blank" class="group relative block transform hover:scale-105 transition-all duration-500">
+                    <!-- Animated Border -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 rounded-3xl blur opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
+                    
+                    <!-- Card Content -->
+                    <div class="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 group-hover:border-blue-400/50 rounded-3xl p-8 h-full transition-all duration-500">
+                        
+                        <!-- Floating Icon -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500/20 to-blue-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 mx-auto">
+                                <i class="fab fa-linkedin text-blue-400 text-3xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <!-- Floating particles -->
+                            <div class="absolute -top-2 -right-2 w-3 h-3 bg-blue-400/60 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-500"></div>
+                            <div class="absolute -bottom-2 -left-2 w-2 h-2 bg-blue-400/40 rounded-full opacity-0 group-hover:opacity-100 animate-ping delay-200 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">LinkedIn</h3>
+                            <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300 mb-4">Connect professionally</p>
+                            <div class="text-blue-400 font-medium text-sm group-hover:text-white transition-colors duration-300">
+                                Professional Network
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </a>
+                
+                <!-- LINE Contact Card -->
+                <a href="https://line.me/ti/p/aungdoublem" target="_blank" class="group relative block transform hover:scale-105 transition-all duration-500">
+                    <!-- Animated Border -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-green-500 via-green-400 to-green-500 rounded-3xl blur opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
+                    
+                    <!-- Card Content -->
+                    <div class="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 group-hover:border-green-400/50 rounded-3xl p-8 h-full transition-all duration-500">
+                        
+                        <!-- Floating Icon -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-500/20 to-green-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 mx-auto">
+                                <i class="fab fa-line text-green-400 text-3xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <!-- Floating particles -->
+                            <div class="absolute -top-2 -right-2 w-3 h-3 bg-green-400/60 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-500"></div>
+                            <div class="absolute -bottom-2 -left-2 w-2 h-2 bg-green-400/40 rounded-full opacity-0 group-hover:opacity-100 animate-ping delay-200 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors duration-300">LINE Chat</h3>
+                            <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300 mb-4">Quick messaging</p>
+                            <div class="text-green-400 font-medium text-sm group-hover:text-white transition-colors duration-300">
+                                @aungdoublem
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </a>
+                
+                <!-- WhatsApp Contact Card -->
+                <a href="https://wa.me/+66984544058" target="_blank" class="group relative block transform hover:scale-105 transition-all duration-500">
+                    <!-- Animated Border -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-emerald-400 to-emerald-500 rounded-3xl blur opacity-0 group-hover:opacity-70 transition-all duration-700"></div>
+                    
+                    <!-- Card Content -->
+                    <div class="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 group-hover:border-emerald-400/50 rounded-3xl p-8 h-full transition-all duration-500">
+                        
+                        <!-- Floating Icon -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 bg-gradient-to-br from-emerald-500/20 to-emerald-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 mx-auto">
+                                <i class="fab fa-whatsapp text-emerald-400 text-3xl group-hover:text-white transition-colors duration-300"></i>
+                            </div>
+                            <!-- Floating particles -->
+                            <div class="absolute -top-2 -right-2 w-3 h-3 bg-emerald-400/60 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-500"></div>
+                            <div class="absolute -bottom-2 -left-2 w-2 h-2 bg-emerald-400/40 rounded-full opacity-0 group-hover:opacity-100 animate-ping delay-200 transition-opacity duration-500"></div>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors duration-300">WhatsApp</h3>
+                            <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300 mb-4">Instant messaging</p>
+                            <div class="text-emerald-400 font-medium text-sm group-hover:text-white transition-colors duration-300">
+                                Chat directly
+                            </div>
+                        </div>
+                        
+                        <!-- Hover Effect -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                </a>
+                
+            </div>
+            
+            <!-- Additional Info Panel -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                <div class="relative inline-block">
+                    <!-- Animated Background -->
+                    <div class="absolute -inset-6 bg-gradient-to-r from-accent/20 via-highlight/20 to-accent/20 rounded-3xl blur-2xl opacity-60 animate-pulse"></div>
+                    
+                    <!-- Content Panel -->
+                    <div class="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl border border-white/30 rounded-3xl p-8 md:p-12">
+                        <h3 class="text-3xl font-bold text-white mb-6">Let's Build Something Amazing!</h3>
+                        <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                            Whether you have a project idea, want to collaborate, or just want to say hello, 
+                            I'm always open to new opportunities and conversations.
+                        </p>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-8 mb-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-accent mb-2">24h</div>
+                                <div class="text-sm text-gray-400">Response Time</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-highlight mb-2">10+</div>
+                                <div class="text-sm text-gray-400">Projects Done</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-blue-400 mb-2">100%</div>
+                                <div class="text-sm text-gray-400">Commitment</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Status Indicators -->
+                        <div class="flex items-center justify-center gap-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                                <span class="text-green-400 font-medium">Available for Projects</span>
+                            </div>
+                            <div class="w-px h-6 bg-white/20"></div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                                <span class="text-accent font-medium">Open to Collaboration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="js/modern-particles.js"></script>
+<script src="js/certificate-carousel.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+
+    // Add smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when a link is clicked
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    // Add fade-in animation to sections
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('section').forEach((section) => {
+        observer.observe(section);
+    });
+</script>
 </body>
 </html>
